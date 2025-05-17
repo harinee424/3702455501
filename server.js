@@ -5,13 +5,11 @@ const app = express();
 const PORT = 3000;
 
 const WINDOW_SIZE = 10;
-const storedNumbers = new Set(); // stores unique numbers
-let numberQueue = []; // keeps order for sliding window
-
+const storedNumbers = new Set(); 
+let numberQueue = []; 
 const VALID_IDS = ['p', 'f', 'e', 'r'];
-const TEST_SERVER = 'http://20.244.56.144/test'; // Replace with actual test API
+const TEST_SERVER = 'http://20.244.56.144/test'; 
 
-// Utility to fetch from server with timeout (500ms)
 const fetchNumbers = async (id) => {
   try {
     const source = axios.CancelToken.source();
@@ -23,7 +21,7 @@ const fetchNumbers = async (id) => {
     clearTimeout(timeout);
     return res.data.numbers || [];
   } catch (err) {
-    return []; // timeout or error
+    return []; 
   }
 };
 
