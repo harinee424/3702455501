@@ -6,7 +6,7 @@ import HeatMap from "react-heatmap-grid";
 const App = () => {
   const [stockData, setStockData] = useState([]);
   const [heatmapData, setHeatmapData] = useState([]);
-  const [interval, setInterval] = useState(5); // default 5 minutes
+  const [interval, setInterval] = useState(5); 
 
   useEffect(() => {
     fetchStockData();
